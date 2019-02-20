@@ -7,3 +7,5 @@ Frameworks & Tools:
   - Django
   - Jinja2
   - Bootstrap
+  - Google Cloud Platform
+  - GCP Repositories
