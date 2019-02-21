@@ -29,3 +29,12 @@
     border-radius: 2px;
     width: 100%;
 }
+
+#temp {
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    width: 50%;
+    height: 50%;
+}
