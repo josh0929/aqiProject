@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Weather App - Portal</title>
+        <title>AQI Project - Portal</title>
         <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,7 +21,7 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark"
                  style="background-color: rgb(66, 133, 244);">
                 <a class="navbar-brand" href="index.html">
-                    <img src='{% static "/img/cloud.png" %}' style="width: 35px; height: 35px; margin-right: 10px;">Weather App</a>
+                    <img src='{% static "/img/cloud.png" %}' style="width: 35px; height: 35px; margin-right: 10px;">aqiProject</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +38,7 @@
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search other City" aria-label="Search">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </div>
@@ -52,9 +52,28 @@
                     <!-- Google Maps imported here -->
                 </div>
                 <div id="d2">
-                  <div id="temp">
-                    <p>Temperature (in celcius)</p>
-                    <h2 style="font-size: 5.5em;">{{ tp }}</h2>
+                  <div id="main_top">
+                    <div id="temp_info">
+                      <h4>Temperature:</h4>
+                      <h2 class="display-4">{{ tpc }}&#8451;</h2>
+                      <h2 class="display-4">{{ tpf }}&#8457;</h2>
+                    </div>
+                    <div id="temp_img">
+                      <img src='{% static ic %}' style="width: 230px; height: 200px;">
+                    </div>
+                  </div>
+                  <hr class="my-4">
+                  <div id="main_bottom">
+                    <div id="demographics">
+                      <h4>Demographics:</h4>
+                      <p>
+                        City:  {{ city }}<br>
+                        State: {{ state }}
+                      </p>
+                    </div>
+                    <div id="reload_button">
+                        <a class="btn btn-primary btn-lg" href="http://aqiproject.com">Reload</a>
+                    </div>
                   </div>
                 </div>
             </div>
@@ -65,101 +84,50 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Value</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">&#x1F354</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                                <td scope="row">&#x2601;</th>
+                                <td>Humidity</td>
+                                <td>{{ hu }}</td>
                             </tr>
                             <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
+                                <th scope="row">&#x1F4C8;</th>
+                                <td>Atmospheric Pressure in hPa</td>
+                                <td>{{ pr }}</td>
                             </tr>
                             <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
+                                <th scope="row">&#x1F504;</th>
+                                <td>Wind Direction</td>
+                                <td>{{ wd }}</td>
                             </tr>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                                <th scope="row">&#x1F4A8;</th>
+                                <td>Wind Speed (m/s)</td>
+                                <td>{{ ws }}</td>
                             </tr>
                             <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
+                                <th scope="row">&#x1F1FA;</th>
+                                <td>AQI value based on US EPA standard</td>
+                                <td>{{ aqius }}</td>
                             </tr>
                             <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
+                                <th scope="row">&#x1F1E8;</th>
+                                <td>AQI value based on Chine MEP standard</td>
+                                <td>{{ aqicn }}</td>
                             </tr>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                                <th scope="row">&#x1F1FA;</th>
+                                <td>Pollutant for US AQI</td>
+                                <td>{{ aqicn }}</td>
                             </tr>
                             <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
+                                <th scope="row">&#x1F1E8;</th>
+                                <td>Pollutant for Chinese AQI</td>
+                                <td>{{ maincn }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -172,7 +140,7 @@
             function initMap() {
                 map = new google.maps.Map(document.getElementById('d1'), {
                     center: {lat: {{ lat }}, lng: {{ long }} },
-                    zoom: 14
+                    zoom: 15
                 });
             }
         </script>

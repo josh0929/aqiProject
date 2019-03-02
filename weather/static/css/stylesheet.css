@@ -1,5 +1,9 @@
+.container {
+  width: 500px;
+}
+
 #topRow{
-    height:420px;
+    height:370px;
     margin-top: 20px;
 }
 
@@ -30,11 +34,40 @@
     width: 100%;
 }
 
-#temp {
-    margin-top: 25px;
+#main_top {
+  height: 50%;
+  margin-top: 25px;
+
+}
+
+#temp_info {
     margin-left: 25px;
-    margin-bottom: 20px;
-    margin-right: 20px;
-    width: 50%;
-    height: 50%;
+    width: 45%;
+    height: 100%;
+    float: left;
+}
+
+#temp_img {
+    margin-right: 25px;
+    width: 45%;
+    height: 100%;
+    float: right;
+}
+
+#main_bottom {
+  height: 50%;
+}
+
+#demographics {
+    margin-left: 25px;
+    width: 60%;
+    height: 100%;
+    float: left;
+}
+
+#reload_button {
+    margin-right: 25px;
+    width: 30%;
+    height: 100%;
+    float: right;
 }
