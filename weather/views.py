@@ -19,7 +19,7 @@ def Home(request):
 
 	#img string
 	img = air_data["data"]["current"]["weather"]["ic"]
-	img_str = '/img/' + img + '.png'
+	img_str = 'img/' + img + '.png'
 
 	#Data
 	context = {
