@@ -19,5 +19,9 @@ from django.conf.urls import url, include
 
 urlpatterns = [
 	url(r'^admin/', admin.site.urls),
+<<<<<<< HEAD
 	url(r'^weather/', include('weather.urls')),
+=======
+	url(r'^', include('weather.urls')),
+>>>>>>> a9595a9568dc3771bddb8f2666e8665222268906
 ]

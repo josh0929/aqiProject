@@ -25,7 +25,7 @@ SECRET_KEY = '%*2m$54ca*o&bcldl-hg(q@x7ypd=232ap%58shcmj+q7+h2+9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['aqiproject.com']
 
 
 # Application definition
