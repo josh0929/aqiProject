@@ -7,9 +7,7 @@ import requests
 def Home(request):
 	#AIRVisual API request
 	av_site = "https://api.airvisual.com/v2/nearest_city?key="
-	#api_key = fileIO.read_from_file("api_key.json")
-	#my_api_key = api_key["api_key"]
-	my_api_key = "6hqhr8n2SW9PXHtLh"
+	my_api_key = ""
 	url = av_site + my_api_key
 	air_data = requests.get(url).json()
 
